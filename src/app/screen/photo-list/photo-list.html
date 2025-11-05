@@ -1,0 +1,14 @@
+<div class="grid">
+  @for (p of photos; track trackById) {
+    <app-photo-card [photo]="p" [isFav]=favIds.has(p.id)
+    (click)="onCardClick(p)" (toggleEvent)="onToggle(p)"></app-photo-card>
+  }
+
+</div>
+<div class="loader" #anchor>
+  @if (loading) {
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  } @else {
+    <div>Loading...</div>
+  }
+</div>

@@ -1,0 +1,41 @@
+:root {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --text: #ffffff;
+  --muted: #dbdbdb;
+  --accent: #570707;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+mat-toolbar {
+  background: #222222 !important;
+  color: var(--text) !important;
+}
+button.mat-button {
+  color: var(--text) !important;
+}
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0; font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

@@ -1,0 +1,12 @@
+@if ((favorites$ | async); as favorits) {
+  @if (favorits.length) {
+    <div class="grid">
+        @for (p of favorits; track p) {
+          <app-photo-card [photo]="p" [isFav]="true"
+                          (click)="open(p)" (toggleEvent)="removeFavorite(p)"></app-photo-card>
+        }
+    </div>
+  } @else {
+    <p>No favorites photo yet</p>
+  }
+}

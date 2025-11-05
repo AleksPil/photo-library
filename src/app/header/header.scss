@@ -1,0 +1,19 @@
+.spacer {
+  flex: 1 1 auto;
+}
+button.active {
+  background-color: #3c3c3c;
+}
+::ng-deep.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  height: var(--mat-toolbar-standard-height, 100px)
+}
+.mat-toolbar button:first-of-type {
+  margin: 0 16px;
+}

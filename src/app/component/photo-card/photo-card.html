@@ -1,0 +1,8 @@
+<mat-card class="photo-card" (click)="click.emit(photo)">
+  <img mat-card-image [src]="photo.download_url" [alt]="photo.author" loading="lazy">
+  <mat-card-actions align="end">
+    <mat-icon class="white-icon" (click)="toggle($event)"
+    matTooltip="{{isFav ? 'Remove': 'Add'}}"
+    [ngStyle]="{'color': isFav ? '#ffffff' : '#000000'}">favorite</mat-icon>
+  </mat-card-actions>
+</mat-card>
