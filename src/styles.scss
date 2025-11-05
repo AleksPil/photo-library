@@ -19,13 +19,14 @@ button.mat-button {
   color: var(--text) !important;
 }
 .app-shell {
-  max-width: 1200px;
+  //max-width: 1200px;
   margin: 0 auto;
 }
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 12px;
+  margin: 10px;
 }
 .photo-card img {
   display: block;

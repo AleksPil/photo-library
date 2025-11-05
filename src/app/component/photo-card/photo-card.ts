@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCard, MatCardActions, MatCardImage } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { Photo } from '../../models/Photo';
+import { Photo } from '@models';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { NgStyle } from '@angular/common';
 
 @Component({
@@ -13,6 +15,8 @@ import { NgStyle } from '@angular/common';
     MatCardImage,
     MatIconModule,
     MatTooltipModule,
+    MatCardModule,
+    MatButtonModule,
     NgStyle
   ],
   templateUrl: './photo-card.html',

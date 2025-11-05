@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { PhotoCard } from '../../component/photo-card/photo-card';
-import { PhotoService } from '../../services/photo';
-import { FavoriteService } from '../../services/favorite';
+import { PhotoCard } from '../../component';
+import { FavoriteService } from '@services';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-favorites',
@@ -18,8 +17,7 @@ import {AsyncPipe} from '@angular/common';
 export class Favorites {
   favorites$!: Observable<any>;
 
-  constructor(private photoService: PhotoService,
-              private favoritesService: FavoriteService,
+  constructor(private favoritesService: FavoriteService,
               private router: Router) {
     this.favorites$ = this.favoritesService.favorites$;
   }

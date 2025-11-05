@@ -1,12 +1,14 @@
 import { Routes } from '@angular/router';
-import { PhotoList } from './screen/photo-list/photo-list';
-import { PhotoDetail } from './screen/photo-detail/photo-detail';
-import { Favorites } from './screen/favorites/favorites';
+import {
+  PhotoList,
+  PhotoDetail,
+  Favorites } from './screen';
+
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'photos', pathMatch: 'full' },
+  { path: '', redirectTo: 'photo', pathMatch: 'full' },
   { path: 'photo', component: PhotoList },
-  { path: 'photo/:id', component: PhotoDetail },
+  { path: 'photos/:id', component: PhotoDetail },
   { path: 'favorites', component: Favorites },
-  { path: '**', redirectTo: 'photos' }
+  { path: '**', redirectTo: 'photo' }
 ];

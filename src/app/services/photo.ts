@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Photo } from '../models/Photo';
+import { Photo } from '@models';
 import { delay, Observable, of } from 'rxjs';
 
 @Injectable({
@@ -14,19 +14,24 @@ export class PhotoService {
       return {
         id,
         author: `Autor ${seed % 100}`,
-        width: 600,
-        height: 600,
-        url: `https://picsum.photos/seed/${seed}/200/300`,
-        download_url: `https://picsum.photos/seed/${seed}/200/300`,
+        url: `https://picsum.photos/seed/${seed}/600/800`,
+        download_url: `https://picsum.photos/seed/${seed}/600/800`,
         seed
       }
     });
     const ms: number = 200 + Math.floor(Math.random() * 100)
-    console.log('photos', photos)
     return of(photos).pipe(delay(ms));
   }
 
-  getPhotoById(id: number): any {
-
+  getPhotoById(id: string): any {
+    const parts: string[] = id.split('-');
+    const seed: number = parts[2] ? Number(parts[2]) : Math.floor(Math.random() * 1000000);
+    const photo = {
+      id,
+      author: `Autor ${seed % 100}`,
+      url: `https://picsum.photos/seed/${seed}/1200/800`,
+      download_url: `https://picsum.photos/seed/${seed}/1200/800`,
+    };
+    return of(photo).pipe(delay(200 + Math.floor(Math.random() * 100)));
   }
 }

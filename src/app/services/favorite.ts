@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Photo } from '../models/Photo';
+import { Photo } from '@models';
 
 const STORAGE_KEY = 'photo_library_favorites'
 
@@ -49,5 +49,4 @@ export class FavoriteService {
   isFavorite(id: string) {
     return this.map.has(id);
   }
-
 }

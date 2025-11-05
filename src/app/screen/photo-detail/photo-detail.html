@@ -1,7 +1,10 @@
-<div class="wrapper">
-  <img src="" class="full-image" alt="photo"/>
+@if (photo$ | async; as photo) {
+  <div class="wrapper">
+    <img [src]="photo.download_url" class="full-image" alt="photo"/>
 
-  <div class="action">
-    <button matButton="filled" color="warn" (click)="remove('')">Remove from favorites</button>
+    <div class="action">
+      <button mat-raised-button color="warn" (click)="remove(photo.id)">Remove from favorites</button>
+    </div>
   </div>
-</div>
+}
+

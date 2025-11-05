@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { PhotoService } from '../../services/photo';
-import { FavoriteService } from '../../services/favorite';
-import { Photo } from '../../models/Photo';
-import { PhotoCard } from '../../component/photo-card/photo-card';
+import { PhotoService, FavoriteService } from '@services';
+import { Photo } from '@models';
+import { PhotoCard } from '../../component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Subscription } from 'rxjs';
 
@@ -32,7 +31,6 @@ export class PhotoList implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
     this.favSub = this.favoritesService.favorites$.subscribe((arr: Photo[]) =>{
-      console.log('arr', arr);
       this.favIds = new Set(arr.map((item: Photo) => item.id));
     })
     this.load();
@@ -67,7 +65,6 @@ export class PhotoList implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onCardClick(photo: Photo): void {
-    console.log('photo___', photo);
     if (!this.favoritesService.isFavorite(photo.id)) {
       this.favoritesService.addPhoto(photo);
     } else {
@@ -76,7 +73,6 @@ export class PhotoList implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onToggle(photo: Photo): void {
-    console.log('photo___', photo);
     if (!this.favoritesService.isFavorite(photo.id)) {
       this.favoritesService.addPhoto(photo);
     } else {
